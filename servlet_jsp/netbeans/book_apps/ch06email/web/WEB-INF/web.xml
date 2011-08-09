@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <!-- the definitions for the servlets -->
+    <servlet>
+        <servlet-name>AddToEmailListServlet</servlet-name>
+        <servlet-class>email.AddToEmailListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>email.TestServlet</servlet-class>
+    </servlet>
+
+    <!-- the mapping for the servlets -->
+    <servlet-mapping>
+        <servlet-name>AddToEmailListServlet</servlet-name>
+        <url-pattern>/addToEmailList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToEmailListServlet</servlet-name>
+        <url-pattern>/email/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+
+    <!-- other configuration settings for the application -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>join_email_list.html</welcome-file>
+    </welcome-file-list>
+</web-app>

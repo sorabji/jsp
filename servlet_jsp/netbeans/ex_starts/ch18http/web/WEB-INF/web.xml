@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>GetRequestHeadersXMLServlet</servlet-name>
+        <servlet-class>http.GetRequestHeadersXMLServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetRequestHeadersExcelServlet</servlet-name>
+        <servlet-class>http.GetRequestHeadersExcelServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <servlet-class>http.DownloadFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReturnUserTableAsExcelServlet</servlet-name>
+        <servlet-class>http.ReturnUserTableAsExcelServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ReturnUserTableWithGZIPServlet</servlet-name>
+        <servlet-class>http.ReturnUserTableWithGZIPServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetRequestHeadersExcelServlet</servlet-name>
+        <url-pattern>/getRequestHeadersExcel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetRequestHeadersXMLServlet</servlet-name>
+        <url-pattern>/getRequestHeadersXML</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DownloadFileServlet</servlet-name>
+        <url-pattern>/downloadFile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReturnUserTableAsExcelServlet</servlet-name>
+        <url-pattern>/returnUserTableAsExcel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReturnUserTableWithGZIPServlet</servlet-name>
+        <url-pattern>/returnUserTableWithGZIP</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        </welcome-file-list>
+</web-app>

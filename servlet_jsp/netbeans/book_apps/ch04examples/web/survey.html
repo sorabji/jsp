@@ -1,0 +1,60 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+    <title>Murach's Java Servlets and JSP</title>
+    <link rel="stylesheet" href="styles/murach.css">
+</head>
+
+<body>
+<table border="0" cellpadding="0">
+<form action="writeSurveyData" method="post">
+  <tr>
+    <td width="410" valign="top" colspan="2">
+      <h1>Survey</h1>
+      <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
+      <h3>Your information:</h3>
+    </td>
+  </tr>
+  <tr>
+    <td><p>First Name</td>
+    <td><input type="text" name="firstName" size="20" tabindex="1"></td>
+  </tr>
+  <tr>
+    <td><p>Last Name</td>
+    <td><input type="text" name="lastName" size="20" tabindex="2"></td>
+  </tr>
+  <tr>
+    <td><p>Email Address</td>
+    <td><input type="text" name="emailAddress" size="20" tabindex="3"></td>
+  </tr>
+  <tr>
+    <td colspan="2" height="12"></td>
+  </tr>
+  <tr>
+    <td width="410" valign="top" colspan="2">
+      <h3>How did you hear about us?</h3>
+      <p>
+        <input type=radio name="heardFrom" value="Search Engine" tabindex="4">Search engine
+        <input type=radio name="heardFrom" value="Friend">Word of mouth
+        <input type=radio name="heardFrom" value="Other">Other
+      </p>
+      <h3>Would you like to receive announcements about new CDs and special offers?</h3>
+      <p><input type="checkbox" name="wantsUpdates" checked> YES, I'd like to receive
+         information on new CDs and special offers.<br>
+      </p>
+      <p>
+      Please contact me by
+      <select name="contactVia">
+        <option value="Both" checked>email or postal mail
+        <option value="Email">email only
+        <option value="Postal Mail">postal mail only
+      </select>
+      </p>
+      <p><input type=submit value="Submit" tabindex="5"></p>
+    </td>
+  </tr>
+</form>
+</table>
+</body>
+</html>

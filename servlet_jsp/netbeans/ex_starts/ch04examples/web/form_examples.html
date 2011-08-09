@@ -1,0 +1,96 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<!-- begin the head section of the HTML document -->
+<head>
+    <title>Murach's Java Servlets and JSP</title>
+</head>
+
+<!-- begin the body section of the HTML document -->
+<body>
+
+<p>Here's a form that contains two text boxes and a button:</p>
+<form action="writeNameToList" method="get">
+    <p>
+    First name: <input type="text" name="firstName"><br>
+    Last name: <input type="text" name="lastName">
+    <input type="submit" value="Submit">
+    </p>
+</form>
+<br>
+
+<p>Here's a form that contains a text box and a hidden text box:</p>
+<form action="checkPassword" method="get">
+    Username: <input type="text" name="username" value="jsmith"><br>
+    Password: <input type="password" name="password" value="opensesame"><br>
+              <input type="hidden" name="productCode" value="jr01"><br>
+</form>
+<br>
+
+<p>Here's a form that contains three different types of buttons:</p>
+<form action="sendData" method="get">
+    <input type="submit" value="Submit">   
+    <input type="reset" value="Reset">   
+    <input type="button" value="Validate" onclick="validate(this.form)">
+</form>
+<br>
+
+<p>Here are two forms where each form contains one Submit button:</p>
+<form action="displayQuickOrder" method="post">
+    <input type="submit" name="continue" value="Continue Shopping">
+</form> 
+<form action="checkUser" method="post">
+    <input type="submit" name="checkout" value="Checkout">
+</form>
+<br>
+
+<p>Here's a form that contains 4 check boxes and 3 radio buttons:</p>
+<form action="addToMailingList" method="get">
+    <input type="checkbox" name="addEmail" checked>
+    Yes, add me to your mailing list.<br>
+    <br>
+    Contact me by:<br>
+    <input type="radio" name="contactVia" value="Email">Email 
+    <input type="radio" name="contactVia" value="Postal Mail">Postal mail 
+    <input type="radio" name="contactVia" value="Both" checked>Both<br>
+    <br>
+    I'm interested in these types of music:<br>
+    <input type="checkbox" name="rock">Rock<br>
+    <input type="checkbox" name="country">Country<br>
+    <input type="checkbox" name="bluegrass">Bluegrass<br>
+</form>
+<br>
+
+<p>Here's a form that contains one combo box with 3 options:</p>
+<form action="writeCountry" method="get">
+    Select a country:<br>
+    <select name="country">
+        <option value="USA" selected>United States
+        <option value="Canada">Canada
+        <option value="Mexico">Mexico
+    </select><br>
+</form>
+<br>
+
+<p>Here's a form that contains one list box with 3 options:</p>
+<form action="writeCountry" method="get">
+  Select a country:<br>
+  <select name="country" multiple>
+    <option value="USA" selected>United States
+    <option value="Canada">Canada
+    <option value="Mexico">Mexico
+  </select><br>
+  (To select more than one country, hold down the Ctrl key.)<br>
+</form>
+<br>
+
+<p>Here's a form that contains one text area:</p>
+<form action="writeComments" method="get">
+  Comments:<br>
+  <textarea name="comment" rows="5" cols="60">This text area holds approximately 60 characters per line, and it holds 5 lines of text. By default, this text area wraps each line to the next line, and it includes a horizontal scroll bar that you can use when the text goes past the 5th line. Text areas are often used to allow the user to enter comments.</textarea><br>
+</form>
+<br>
+
+</body>
+
+</html>
