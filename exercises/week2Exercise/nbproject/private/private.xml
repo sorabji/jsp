@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/home/laptop/documents/jsp/exercises/week2Exercise/web/add_student.html</file>
+        <file>file:/home/laptop/documents/jsp/exercises/week2Exercise/src/java/controllers/ProcessStudentServlet.java</file>
+        <file>file:/home/laptop/documents/jsp/exercises/week2Exercise/web/index.jsp</file>
+        <file>file:/home/laptop/documents/jsp/exercises/week2Exercise/web/views/process_student_handler.jsp</file>
+    </open-files>
 </project-private>
