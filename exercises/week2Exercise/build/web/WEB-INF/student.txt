@@ -1,7 +1,0 @@
-sdf|sjk|sldkfjdkfj
-john|bill|bill@john.com
-this|that|somehting@sdlfkj
-this|that|something@this.that
-this |that|new@joe.com
-jennifer|johnson|mahalojohnson@gmail.com
-||

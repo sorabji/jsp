@@ -31,6 +31,9 @@ public class ProcessStudentServlet extends HttpServlet {
           throws ServletException, IOException {
     response.setContentType("text/html;charset=UTF-8");
     PrintWriter out = response.getWriter();
+    String url = "";
+    Student student = new Student();
+    String message = "";
     try {
       // get data
       String firstName = request.getParameter("firstName");
@@ -38,37 +41,33 @@ public class ProcessStudentServlet extends HttpServlet {
       String email = request.getParameter("emailAddress");
 
       // make object
-      Student student = new Student(firstName, lastName, email);
+      student = new Student(firstName, lastName, email);
 
-      // get path
-      String path = getServletContext().getRealPath("/WEB-INF/student.txt");
+      // validate
+      if (student.getFirstName().equals("")) {
+        message += "first name cannot be blank<br />";
+      }
+      if (student.getLastName().equals("")) {
+        message += "last name cannot be blank<br />";
+      }
+      if (student.getEmail().equals("")) {
+        message += "email cannot be blank<br />";
+      }
+      if (!message.equals("")){
+        url = "/views/add_student_2.jsp";
+      } else {
+        url = "views/process_student_handler.jsp";
+        // get path
+        String path = getServletContext().getRealPath("/WEB-INF/student.txt");
 
-      // write the student
-      StudentIO.writeToFile(student, path);
-      request.setAttribute("student", student);
-
-//      out.println("<html>");
-//      out.println("<head>");
-//      out.println("<title>info for new student</title>");
-//      out.println("</head>");
-//      out.println("<body>");
-//      out.println("<h1>info for new student</h1>");
-//      out.println("<table border=\"1\"><tr><td>");
-//      out.println("first name: </td><td>");
-//      out.println(student.getFirstName());
-//      out.println("</td></tr><tr><td>");
-//      out.println("last name: </td><td>");
-//      out.println(student.getLastName());
-//      out.println("</td></tr><tr><td>");
-//      out.println("email address: </td><td>");
-//      out.println(student.getEmail());
-//      out.println("</td></tr>");
-//      out.println("</table>");
-//      out.println("</body>");
-//      out.println("</html>");
+        // write the student
+        StudentIO.writeToFile(student, path);
+      }
     } finally {
 //      out.close();
-      request.getRequestDispatcher("views/process_student_handler.jsp").forward(request, response);
+        request.setAttribute("student", student);
+        request.setAttribute("message", message);
+        request.getRequestDispatcher(url).forward(request, response);
     }
   }
 

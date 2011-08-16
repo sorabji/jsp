@@ -13,6 +13,12 @@ public class Student {
   String lastName;
   String email;
 
+  public Student(){
+    this.firstName = "";
+    this.lastName = "";
+    this.email = "";
+  }
+
   public Student(String firstName, String lastName, String email) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -44,7 +50,7 @@ public class Student {
   }
 
 
-  
 
-	
+
+
 }

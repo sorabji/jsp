@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : index
     Created on : Aug 9, 2011, 10:06:08 AM
     Author     : laptop
@@ -13,6 +13,7 @@
   </head>
   <body>
     <h1>junk, all junk</h1>
-    <a href="add_student.html">go to student add page</a>
+    <a href="add_student.html">go to student add page</a><br />
+    <a href="views/add_sudent_2.jsp">go to student add page with postback</a>
   </body>
 </html>
