@@ -75,7 +75,8 @@ public class AddToEmailListServlet extends HttpServlet
         + "</body>\n"
         + "</html>\n");
 
-        System.out.print("globalCount"+globalCount);
+        //log("globalCount"+globalCount);
+        System.out.println("globalCount: "+globalCount);
 
         out.close();
     }
