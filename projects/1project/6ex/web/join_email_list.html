@@ -12,7 +12,7 @@
      email address below. <br>
      Then, click on the Submit button.</p>
 
-  <form action="addToEmailList" method="post">
+  <form action="/6ex/displayMusicChoices" method="post">
   <table cellspacing="5" border="0">
     <tr>
       <td align="right">First name:</td>
@@ -26,6 +26,20 @@
       <td align="right">Email address:</td>
       <td><input type="text" name="emailAddress"></td>
     </tr>
+      <tr>
+        <td align="right">I'm interested in</td>
+      </tr>
+      <tr>
+        <td align="right">these types of music:</td>
+      </tr>
+      <tr>
+        <td><select name="musicChoices" multiple="multiple">
+          <option>Rock</option>
+            <option>Country</option>
+            <option>Bluegrass</option>
+            <option>Folk</option>
+          </select></td>
+      </tr>
     <tr>
       <td></td>
       <td><br><input type="submit" value="Submit"></td>
