@@ -43,6 +43,8 @@ public class ProcessStudentServlet extends HttpServlet {
       // make object
       student = new Student(firstName, lastName, email);
 
+      request.getSession().setAttribute("student", student);
+
       // validate
       if (student.getFirstName().equals("")) {
         message += "first name cannot be blank<br />";
@@ -56,7 +58,7 @@ public class ProcessStudentServlet extends HttpServlet {
       if (!message.equals("")){
         url = "/views/add_student_2.jsp";
       } else {
-        url = "views/process_student_handler.jsp";
+        url = "/views/process_student_handler.jsp";
         // get path
         String path = getServletContext().getRealPath("/WEB-INF/student.txt");
 

@@ -14,6 +14,6 @@
   <body>
     <h1>junk, all junk</h1>
     <a href="add_student.html">go to student add page</a><br />
-    <a href="views/add_sudent_2.jsp">go to student add page with postback</a>
+    <a href="views/add_student_2.jsp">go to student add page with postback</a>
   </body>
 </html>

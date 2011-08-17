@@ -4,6 +4,7 @@
     Author     : laptop
 --%>
 
+<%@page import="java.util.Enumeration"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,10 +17,19 @@
         <%@page import="exercise.Student" %>
         <%
         Student s = (Student) request.getAttribute("student");
+        Enumeration attNames = request.getAttributeNames();
         %>
         <p>infoz: </p><br />
         <p><%= s.getFirstName() %></p>
         <p><%= s.getLastName() %></p>
         <p><%= s.getEmail() %></p>
+        <a href="<%=response.encodeURL("/week2Exercise/views/showSession.jsp")%>">see session info</a><br />
+        <%
+        while(attNames.hasMoreElements()){
+          String name = (String) attNames.nextElement();
+          out.println("<p>"+name+"</p>");
+          out.println("<p>"+request.getSession().getAttribute(name) +"</p>");
+        }
+        %>
     </body>
 </html>
