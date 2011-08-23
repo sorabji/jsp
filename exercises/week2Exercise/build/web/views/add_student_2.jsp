@@ -14,18 +14,20 @@
 </head>
 
 <body>
+  <jsp:useBean id="student" scope="request" class="exercise.Student"/>
   <%@page import="exercise.Student" %>
   <%
-   Student s = (Student)request.getAttribute("student") ;
+   /*Student s = (Student)request.getAttribute("student") ;
    String message = (String)request.getAttribute("message");
 
    if (s==null) s = new Student();
    if (message==null) message = "";
+ * */
   %>
     <h1>add a student with postback</h1>
     <p>to add a student, enter his name and email address</p>
 
-    <p><%= message %></p>
+    <!--<p></p>-->
 
     <form action="/week2Exercise/processStudent" method="post">
     <table cellspacing="5" border="0">
@@ -33,19 +35,19 @@
             <td align="right">First name:</td>
             <td><input type="text"
                        name="firstName"
-                       value="<%= s.getFirstName()%>"></td>
+                       value="<jsp:getProperty name='student' property='firstName'/>"></td>
         </tr>
         <tr>
             <td align="right">Last name:</td>
             <td><input type="text"
                        name="lastName"
-                       value="<%= s.getLastName()%>"></td>
+                       value="<jsp:getProperty name='student' property='lastName'/>"></td>
         </tr>
         <tr>
             <td align="right">Email address:</td>
             <td><input type="text"
                        name="emailAddress"
-                       value="<%= s.getEmail()%>"></td>
+                       value="<jsp:getProperty name='student' property='email'/>"></td>
         </tr>
         <tr>
             <td></td>

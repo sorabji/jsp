@@ -2,14 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package controllers;
+package Controllers;
 
-import data.StudentIO;
-import exercise.Student;
+import Data.WeatherBean;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author laptop
  */
-public class ProcessStudentServlet extends HttpServlet {
+@WebServlet(name = "WeatherBeanServlet", urlPatterns = {"/WeatherBean"})
+public class WeatherBeanServlet extends HttpServlet {
 
   /**
    * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -30,48 +30,47 @@ public class ProcessStudentServlet extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     response.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = response.getWriter();
+    WeatherBean weather = null;
     String url = "";
-    Student student = new Student();
     String message = "";
     try {
-      // get data
-      String firstName = request.getParameter("firstName");
-      String lastName = request.getParameter("lastName");
-      String email = request.getParameter("emailAddress");
-
-      // make object
-      student = new Student(firstName, lastName, email);
-
-      request.getSession().setAttribute("student", student);
-
       // validate
-      if (student.getFirstName().equals("")) {
-        message += "first name cannot be blank<br />";
+      if (request.getParameter("temp").equals("")){
+        message += "Temperature cannot be blank<br />";
       }
-      if (student.getLastName().equals("")) {
-        message += "last name cannot be blank<br />";
+      if (request.getParameter("humidity").equals("")){
+        message += "Humidity cannot be blank<br />";
       }
-      if (student.getEmail().equals("")) {
-        message += "email cannot be blank<br />";
+      if (request.getParameter("pressure").equals("")){
+        message += "Pressure cannot be blank<br />";
       }
       if (!message.equals("")){
-        url = "/views/add_student_2.jsp";
+        url = "/views/input.jsp";
+        weather = new WeatherBean(0,0,0);
       } else {
         //url = "/views/process_student_handler.jsp";
-        url = "/views/add_student_2.jsp";
-        // get path
-        String path = getServletContext().getRealPath("/WEB-INF/student.txt");
+        url = "/views/DisplayWeather.jsp";
+        message = "good job!";
+        // get data
+        double temp = Double.parseDouble(request.getParameter("temp"));
+        double humidity = Double.parseDouble(request.getParameter("humidity"));
+        double pressure = Double.parseDouble(request.getParameter("pressure"));
 
-        // write the student
-        StudentIO.writeToFile(student, path);
+        // make object
+        weather = new WeatherBean(temp,humidity,pressure);
+
       }
+    } catch (Exception e){
+      message = "you entered some values that cannot be parsed into numbers!";
+
+
     } finally {
-//      out.close();
-        request.setAttribute("student", student);
+        request.setAttribute("weather", weather);
         request.setAttribute("message", message);
         request.getRequestDispatcher(url).forward(request, response);
     }
+
+
   }
 
   // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

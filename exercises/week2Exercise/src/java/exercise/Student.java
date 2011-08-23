@@ -4,11 +4,13 @@
  */
 package exercise;
 
+import java.io.Serializable;
+
 /**
  *
  * @author laptop
  */
-public class Student {
+public class Student implements Serializable{
   String firstName;
   String lastName;
   String email;
