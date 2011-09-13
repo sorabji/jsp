@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/sql_practice">
+  <Resource name="my_db" auth="Container"
+    maxActive="100" maxIdle="30" maxWait="10000"
+    username="root" password="c@rds52c@rds52"
+    driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://localhost:4667/testing?autoReconnect=true"
+    logAbandoned="true" removeAbandoned="true"
+    removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+
+</Context>
